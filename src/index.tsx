@@ -49,7 +49,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
   };
 
   const handleNavigation = () => {
-    navigate("/test");
+    navigate("/");
   };
 
   const handleLogout = () => {
@@ -145,4 +145,3 @@ const Index: React.FC<IndexProps> = ({
 };
 
 export default Index;
-

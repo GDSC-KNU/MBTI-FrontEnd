@@ -30,7 +30,7 @@ const pageContentYes = [
   "마지막까지 미루는 편이다.",
   "지금 진행 중인 프로젝트를 완전히 완료한 후, \n 다른 프로젝트를 시작한다.",
   "괜찮아 ~ 나중에 하면 돼 ~\n마지막까지 미루는 편이다.",
-  "나에게 있는 에너지가 충분할 때,\n 일을 몰아서 하는 편이다.",
+  "그렇다. 에너지가 충분할 때,\n 일을 몰아서 하는 편이다.",
 ];
 
 const pageContentNo = [
@@ -43,7 +43,7 @@ const pageContentNo = [
   "그냥 한 작품을 보고 왔구나 싶다.",
   "평소에 딱히 후회될 일이 떠오르진 않는다.",
   "그렇지 않다.",
-  "어엄 .. 별로 재미없다.",
+  "으음 .. 별로 재미없다.",
   "그렇구나 .. 할 일 하러 간다.",
   "빨리 저 상황이 끝났으면 좋겠다..;;",
   "심장이 쿵쿵. 너무 긴장되어서 심장이 나올 것 같다.",
@@ -53,7 +53,7 @@ const pageContentNo = [
   "바로바로 결정을 내리는 편이다.",
   "완전히 완료되지 않았지만 동시에 프로젝트를 진행한다.",
   "내 사전에 나중이란 없다.\n되도록이면 그때 그때 해결해야 한다.",
-  "계획에 맞게 업무를 진행하는 것을 더 선호한다.",
+  "아니다. 계획에 맞게 업무를 진행하는 것을 선호한다.",
 ];
 
 const MbtiTest: React.FC = () => {
@@ -151,7 +151,7 @@ const MbtiTest: React.FC = () => {
           <div className="flex items-center justify-center">
             {questions.length > 0 && (
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-center font-light text-white text-[17px] p-4">
+                <h1 className="text-center font-[400] text-white text-[17px] p-4">
                   {questions[currentPage].content}
                 </h1>
                 <div className="flex gap-2 flex-col my-[100px] text-center mx-2">

@@ -60,8 +60,8 @@ const Navbar: React.FC<NavbarProps> = ({ isAuthenticated, onNavbarLogout }) => {
       ]
     : [
         { title: "테스트 하러가기 🚀", path: "/test" },
-        { title: "✨ MBTI 게시판 ✨", path: "/mbtiboard" },
-        { title: "로그인", path: "/" },
+        // { title: "✨ MBTI 게시판 ✨", path: "/mbtiboard" },
+        { title: "로그인", path: "/login" },
       ];
 
   return (

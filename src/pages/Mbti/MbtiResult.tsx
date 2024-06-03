@@ -71,7 +71,6 @@ const MbtiResult: React.FC<MbtiResultProps> = ({
     }
   };
 
-  const navigate = useNavigate();
   const imagePath = getImagePath(mbtiResult);
 
   return (
@@ -93,17 +92,18 @@ const MbtiResult: React.FC<MbtiResultProps> = ({
           >
             다시 테스트 하러 가기 ⏎
           </Button>
-          <Button
+          {/* <Button
             onClick={() => {
               onRestartTest();
               setShowResult(false);
             }}
           >
             게시판 이동 ⏎
-          </Button>
+          </Button> */}
           <div
             onClick={() => {
-              navigate("/");
+              onRestartTest();
+              setShowResult(false);
             }}
             className="flex py-2 justify-center text-center items-center gap-2 rounded-full bg-[#e8e8e8]"
           >

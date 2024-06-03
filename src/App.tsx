@@ -10,7 +10,6 @@ import { useState } from "react";
 import MyPage from "./pages/Mypage/MyPage";
 import Navbar from "./components/Navbar";
 
-
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -31,9 +30,10 @@ const App = () => {
             onNavbarLogout={handleLogout}
           />
           <Routes>
+            <Route index path="/" element={<MbtiTest />} />
+            <Route path="/test" element={<MbtiTest />} />
             <Route
-              index
-              path="/"
+              path="/login"
               element={
                 <Index
                   isAuthenticated={isAuthenticated}
@@ -42,12 +42,10 @@ const App = () => {
                 />
               }
             />
-            <Route path="/test" element={<MbtiTest />} />
             <Route path="/totalboarddetail/:id" element={<BoardDetail />} />
             <Route path="/boardmodify/:id" element={<BoardModify />} />
             <Route path="/mbtiboard" element={<MBTIBoard />} />
-            
-            {isAuthenticated && <Route path="/mypage" element={<MyPage />} />}
+            <Route path="/mypage" element={<MyPage />} />
             <Route
               path="/writepage"
               element={

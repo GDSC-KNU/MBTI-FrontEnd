@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 interface WritePageProps {
   onPostSubmit: (content: string) => void;
 }
 
 const WritePage: React.FC<WritePageProps> = ({ onPostSubmit }) => {
-  const [content, setContent] = useState('');
-  const [name, setName] = useState(''); // Add name state
-  const [mbti, setMbti] = useState(''); // Add mbti state
-  const [password, setPassword] = useState(''); // Add password state
+  const [content, setContent] = useState("");
+  const [name, setName] = useState(""); // Add name state
+  const [mbti, setMbti] = useState(""); // Add mbti state
+  const [password, setPassword] = useState(""); // Add password state
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isMountedRef = React.useRef(true);
@@ -21,7 +21,9 @@ const WritePage: React.FC<WritePageProps> = ({ onPostSubmit }) => {
     };
   }, []);
 
-  const handleContentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleContentChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setContent(event.target.value);
   };
 
@@ -42,13 +44,13 @@ const WritePage: React.FC<WritePageProps> = ({ onPostSubmit }) => {
     if (isSubmitting) {
       return;
     }
-    if (content.trim() === '') {
-      alert('내용을 입력하세요.');
+    if (content.trim() === "") {
+      alert("내용을 입력하세요.");
       return;
     }
 
-    if (password.trim() === '') {
-      alert('비밀번호를 입력하세요.'); // 비밀번호 누락 시 경고
+    if (password.trim() === "") {
+      alert("비밀번호를 입력하세요."); // 비밀번호 누락 시 경고
       return;
     }
 
@@ -57,17 +59,14 @@ const WritePage: React.FC<WritePageProps> = ({ onPostSubmit }) => {
       const newPost = {
         mbti: mbti,
         name: name,
-        content: content,
-        password: password // 입력한 비밀번호를 포함시킴
-        
       };
-      await axios.post('https://gdscmbti.duckdns.org/api/board/write', newPost);
+      await axios.post("https://gdscmbti.duckdns.org/api/board/write", newPost);
 
       if (isMountedRef.current) {
         onPostSubmit(content); // Add the content to the board
-        setContent('');
+        setContent("");
         // Move the navigate logic here after the axios request
-        navigate('/mbtiboard');
+        navigate("/mbtiboard");
       }
     } catch (error) {
       console.log(error);
@@ -77,7 +76,7 @@ const WritePage: React.FC<WritePageProps> = ({ onPostSubmit }) => {
   };
 
   const handlePrevious = () => {
-    navigate('/mbtiboard');
+    navigate("/mbtiboard");
   };
 
   return (
